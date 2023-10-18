@@ -1,0 +1,1165 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Signika+Negative&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+$colorOne: #a892f9;
+$colorTwo: #d0bfff;
+$colorThree: #dfccfb;
+$colorThreeFade: #ffffff;
+$colorFour: #fff8c9;
+$mid-black: #171717;
+$green: #2a8639;
+$colorRed: #ff7e7e;
+$pureWhite: #fff;
+body {
+  background: #e5e5e5;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $colorThreeFade;
+  height: 60px;
+  border-bottom: 1px solid $colorFour;
+  box-shadow: 0px 10px 15px -10px rgb(201, 201, 201);
+  .one {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    .heading {
+      font-size: 21px;
+      margin-left: 20px;
+    }
+    .logo img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .two {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    .username {
+      font-size: 22px;
+      .user {
+        color: $colorOne;
+        font-weight: bold;
+        margin-left: 8px;
+        font-size: 22px;
+      }
+    }
+    .burgericon {
+      display: flex;
+      justify-content: center;
+      margin: 5px;
+      margin-left: 20px;
+      img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.menu {
+  width: 338px;
+  height: 450px;
+  background: #fff;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all ease-out 0.5s;
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .user {
+      margin-left: 20px;
+      .userdetails {
+        margin-top: 10px;
+        margin-left: 5px;
+        .name {
+          font-size: 25px;
+        }
+      }
+      .userlogo {
+        margin-top: 20px;
+        font-size: 50px;
+        background-color: $colorOne;
+        text-align: center;
+        width: 60px;
+        border-radius: 50px;
+      }
+    }
+    .close-btn {
+      img {
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .your {
+    margin-left: 25px;
+    margin-top: 20px;
+    .view,
+    .picture {
+      padding: 3px 0px;
+      cursor: pointer;
+      &:hover {
+        color: $colorOne;
+      }
+    }
+  }
+  .function {
+    margin-left: 25px;
+    margin-top: 20px;
+    .add,
+    .remove {
+      padding: 3px 0px;
+      cursor: pointer;
+      &:hover {
+        color: $colorOne;
+      }
+    }
+  }
+  .logs {
+    margin-left: 25px;
+    margin-top: 20px;
+    .logout,
+    .signup,
+    .switchuser {
+      padding: 3px 0px;
+      cursor: pointer;
+      &:hover {
+        color: $colorOne;
+      }
+    }
+  }
+}
+.main {
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+  justify-content: center;
+}
+.mainOne {
+  width: 870px;
+  height: 600px;
+  // background: #000;
+  margin: 15px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  .importantNotice {
+    background: $colorFour;
+    width: 100%;
+    margin: 10px auto;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    .message {
+      margin-left: 15px;
+      color: $mid-black;
+    }
+    .importantlogo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
+      }
+    }
+  }
+  .studentDetails {
+    background: #ffffff;
+    width: 100%;
+    height: 550px;
+    border-radius: 10px;
+    margin-top: 20px;
+    .heading {
+      margin-left: 20px;
+      margin-top: 20px;
+      font-size: 20px;
+      color: $colorOne;
+      padding: 20px;
+      padding-bottom: 15px;
+      word-spacing: 3px;
+      letter-spacing: 1px;
+    }
+    .flow {
+      width: 92%;
+      margin-left: 40px;
+      height: 50px;
+      // background: #000;
+      border-radius: 5px;
+      margin-top: 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      .search {
+        display: flex;
+        align-items: center;
+        input {
+          background: #f0f0f0;
+          width: 400px;
+          height: 40px;
+          outline: none;
+          border: none;
+          border-radius: 5px;
+          padding-left: 20px;
+          &::placeholder {
+            padding-left: 20px;
+            // color: $mid-black;
+          }
+        }
+        img {
+          height: 39px;
+          width: 39px;
+          padding: 10px;
+          background: #f0f0f0;
+          border-radius: 5px;
+          margin-left: 5px;
+        }
+      }
+      .buttons {
+        button {
+          height: 40px;
+          width: 100px;
+          font-size: 20px;
+          margin: 0px 2px;
+          font-size: 16px;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .post {
+          background: $green;
+          color: white;
+          margin-left: 10px;
+        }
+        .add {
+          background: $colorFour;
+          color: black;
+        }
+      }
+    }
+    .Fliter {
+      width: 92%;
+      margin-left: 40px;
+      height: 60px;
+      // background: #000;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .header {
+        width: 50%;
+        height: 40px;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        border-radius: 7px;
+        .sn {
+          color: $mid-black;
+          margin-left: 30px;
+        }
+        .stname {
+          margin-left: 60px;
+        }
+      }
+      .date {
+        input[type="date"] {
+          background: $colorTwo;
+          padding: 12px;
+          padding-left: 15px;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+        }
+        input[type="date"]::-webkit-datetime-edit {
+          text-transform: uppercase;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .details {
+      height: 350px;
+      width: 92%;
+      background: #f0f0f0;
+      margin: 0px auto;
+      border-radius: 5px;
+      margin-left: 40px;
+      overflow-y: scroll;
+      margin-top: 10px;
+      padding-top: 10px;
+
+      .student {
+        width: 98%;
+        height: 50px;
+        border-radius: 10px;
+        background: $colorThreeFade;
+        margin: 5px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .dets {
+          margin-left: 20px;
+          display: flex;
+          align-items: center;
+          width: 35%;
+          margin-right: 20px;
+          .name {
+            margin-left: 40px;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .actions {
+          display: flex;
+          width: 38%;
+          .remark {
+            margin-right: 40px;
+            background-color: $colorFour;
+            width: 80px;
+          }
+          .work {
+            display: flex;
+            align-items: center;
+            .present {
+              color: white;
+              background: $green;
+              opacity: 0.6;
+              transition: all ease-out 0.2s;
+            }
+            .absent {
+              color: white;
+              background: $colorRed;
+              margin-left: 5px;
+              opacity: 0.5;
+              transition: all ease-in 0.2s;
+            }
+          }
+          button {
+            height: 30px;
+            width: 70px;
+            font-size: 20px;
+            margin: 0px 2px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainTwo {
+  width: 320px;
+  height: 500px;
+  // background-color: black;
+  margin: 15px;
+  .ShowPeople {
+    width: 95%;
+    height: 110px;
+    background: #fff;
+    margin: 15px auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      margin-left: 30px;
+      font-size: 20px;
+      word-spacing: 5px;
+      letter-spacing: 1.5px;
+
+      .img {
+        width: 50px;
+        height: 50px;
+        margin: 5px auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .splitline {
+      height: 60%;
+      width: 3px;
+      background: #000;
+      border-radius: 5px;
+      margin: 0px 10px;
+    }
+    .count {
+      font-size: 25px;
+      margin: 5px;
+      color: $colorOne;
+      margin-right: 50px;
+      width: 40px;
+    }
+  }
+  .noticeBoard {
+    width: 95%;
+    height: 340px;
+    background: #fff;
+    overflow-y: scroll;
+    border-radius: 5px;
+    margin: 10px auto;
+    .top {
+      font-size: 25px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+      .heading {
+        padding-left: 30px;
+        color: $green;
+        font-size: 20px;
+      }
+      .addnoticebutton {
+        background: $green;
+        color: white;
+        font-size: 25px;
+        border-radius: 5px;
+        width: 30px;
+        text-align: center;
+        margin-right: 30px;
+        cursor: pointer;
+      }
+    }
+    .notices {
+      width: 100%;
+      margin-top: 10px;
+      .good {
+        background: $colorThree;
+      }
+      .warn {
+        background-color: $colorFour;
+      }
+      .bad {
+        background-color: $colorRed;
+      }
+      .notice {
+        width: 90%;
+        height: 40px;
+        margin: 9px auto;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        color: $mid-black;
+        img {
+          width: 23px;
+          height: 23px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.splitLineVr {
+  height: 2px;
+  width: 90%;
+  border-radius: 2px;
+  background: $mid-black;
+  margin: 10px auto;
+}
+
+// modals
+.addstdmodal {
+  width: 100%;
+  height: 100%;
+  background: #24242478;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  .addModal {
+    margin-top: 20px;
+    width: 480px;
+    height: 350px;
+    background: $pureWhite;
+    border-radius: 10px;
+    position: relative;
+    .cancleButton {
+      font-size: 25px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-right: 25px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 30px;
+      margin-left: 30px;
+      font-size: 20px;
+    }
+    .form {
+      margin-top: 20px;
+      margin-left: 30px;
+      .firtsname {
+        width: 85%;
+        margin-top: 5px;
+        padding: 10px 20px;
+        border: none;
+        margin-bottom: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        outline: none;
+        border: 1.5px solid #f0f0f0;
+
+        &::placeholder {
+          padding: 10px 20px;
+        }
+        &:focus {
+          border: 1.5px solid $green;
+        }
+      }
+      .lastname {
+        width: 50%;
+        margin-top: 5px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        outline: none;
+        border: 1.5px solid #f0f0f0;
+
+        &::placeholder {
+          padding: 10px 20px;
+        }
+        &:focus {
+          border: 1.5px solid $green;
+        }
+      }
+      .remarks {
+        width: 90%;
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        outline: none;
+        border: 1.5px solid #f0f0f0;
+
+        &::placeholder {
+          padding: 10px 20px;
+        }
+        &:focus {
+          border: 1.5px solid $green;
+        }
+      }
+      .date {
+        background: $colorTwo;
+        padding: 10px;
+        padding-left: 15px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        margin-left: 10px;
+      }
+      .date::-webkit-datetime-edit {
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+    }
+  }
+  .buttons {
+    margin-top: 20px;
+    margin-left: 30px;
+    button {
+      height: 40px;
+      width: 100px;
+      font-size: 20px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .Add {
+      background: $green;
+      color: white;
+    }
+    .cnl {
+      margin-left: 20px;
+      background: $colorFour;
+      color: black;
+    }
+  }
+}
+.postdatamodal {
+  width: 100%;
+  height: 100%;
+  background: #24242478;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  .postmodal {
+    margin-top: 20px;
+    width: 430px;
+    height: 230px;
+    background: $pureWhite;
+    border-radius: 10px;
+    position: relative;
+    .cancleButton {
+      font-size: 20px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-top: 8px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 5px;
+      margin-left: 20px;
+      font-size: 20px;
+    }
+    .message {
+      width: 300px;
+      margin-left: 40px;
+    }
+    .buttons {
+      margin-top: 20px;
+      margin-left: 30px;
+      display: flex;
+      button {
+        height: 40px;
+        font-size: 20px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .post-modal {
+        background: $green;
+        color: white;
+        font-size: 15px !important;
+        width: 130px !important;
+      }
+      .cnl-modal {
+        margin-left: 20px;
+        background: $colorFour;
+        color: black;
+        margin-left: 10px !important;
+      }
+    }
+  }
+}
+.addnoticemo {
+  width: 100%;
+  height: 100%;
+  background: #24242478;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  .noticeModal {
+    margin-top: 20px;
+    width: 450px;
+    height: 250px;
+    background: $pureWhite;
+    border-radius: 10px;
+    position: relative;
+    .cancleButton {
+      font-size: 25px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-right: 25px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 20px;
+      margin-left: 30px;
+      font-size: 20px;
+    }
+    .form {
+      margin-top: 10px;
+      margin-left: 30px;
+      .type {
+        width: 65%;
+        background: #f0f0f0;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin: 10px 0px;
+        padding: 10px;
+        padding-right: 20px;
+        color: #a892f9;
+        option {
+          padding: 10px 20px;
+          background: $colorThreeFade;
+          color: black;
+          border: none;
+        }
+      }
+      .noticeMessage {
+        width: 85%;
+        margin-top: 5px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        outline: none;
+        border: 1.5px solid #f0f0f0;
+
+        &::placeholder {
+          padding: 10px 20px;
+        }
+        &:focus {
+          border: 1.5px solid $green;
+        }
+        &:invalid {
+          border: 1.5px solid $colorRed;
+        }
+      }
+    }
+    .buttons {
+      margin-top: 20px;
+      margin-left: 30px;
+      button {
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .Add {
+        background: $green;
+        color: white;
+      }
+      .cnl {
+        margin-left: 20px;
+        background: $colorFour;
+        color: black;
+      }
+    }
+  }
+}
+.notfiModal {
+  width: 100%;
+  height: 18%;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  .notificaton {
+    margin-top: 20px;
+    width: 350px;
+    height: 80px;
+    background: #f4edff;
+    border-radius: 10px;
+    margin: 10px auto;
+    position: relative;
+    .cancleButton {
+      font-size: 20px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-top: 8px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 10px;
+      margin-left: 40px;
+      font-size: 18px;
+      color: $green;
+      font-weight: 500;
+    }
+    .message {
+      margin-top: 10px;
+      margin-left: 40px;
+      font-size: 16px;
+      color: $mid-black;
+      width: 250px;
+      height: 23px;
+      overflow-y: scroll;
+    }
+  }
+}
+.studentmodal {
+  width: 100%;
+  height: 100%;
+  background: #24242478;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  right: 0px;
+  position: fixed;
+
+  .databox {
+    margin-top: 20px;
+    width: 600px;
+    height: 350px;
+    background: $pureWhite;
+    border-radius: 10px;
+    position: relative;
+    .cancleButton {
+      font-size: 20px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-top: 8px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 5px;
+      margin-left: 20px;
+      font-size: 20px;
+      color: $mid-black !important;
+      word-spacing: 3px;
+      letter-spacing: normal !important;
+    }
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      .det {
+        margin-left: 40px;
+        font-size: 20px;
+        width: 50%;
+        .logo {
+          background: $colorRed;
+          text-align: center;
+          font-size: 50px;
+          padding: 20px;
+          border-radius: 50%;
+          width: 100px;
+          color: $pureWhite;
+        }
+        .info {
+          margin-top: 20px;
+          font-size: 20px;
+          .name,
+          .fname {
+            margin-top: 5px;
+          }
+          .dob,
+          .rno {
+            color: $colorOne;
+            margin-top: 5px;
+          }
+        }
+      }
+      .status {
+        height: 270px;
+        margin-right: 20px;
+        width: 350px;
+        .remarks {
+          padding: 1px;
+          height: 45%;
+          background: #f0f0f0;
+          border-radius: 5px;
+          padding-bottom: 10px;
+          .top {
+            font-size: 18px;
+            color: $green;
+            margin-left: 25px;
+            margin-top: 8px;
+          }
+          .list {
+            overflow: scroll;
+            height: 80%;
+            margin-left: 25px;
+            margin-top: 8px;
+            list-style: circle;
+            display: flex;
+            flex-direction: column-reverse;
+            li {
+              margin: 2px 0px;
+              width: 250px;
+              color: $colorOne;
+            }
+          }
+        }
+        .perfomance {
+          height: 43%;
+          padding: 1px;
+          height: 45%;
+          background: #e5e5e5;
+          border-radius: 5px;
+          padding-bottom: 10px;
+          margin-top: 15px;
+          position: relative;
+
+          .top {
+            font-size: 18px;
+            color: $mid-black;
+            margin-left: 25px;
+            margin-top: 12px;
+          }
+          .score {
+            margin: 15px auto;
+            width: 85%;
+            height: 50px;
+            background: $pureWhite;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            .point {
+              background: $colorFour;
+              height: 30px;
+              border-radius: 0px 10px 10px 0px;
+              font-size: 15px;
+              padding-left: 10px;
+              padding-top: 5px;
+              transition: all 0.4s ease-out;
+            }
+          }
+          .buttons {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            button {
+              border: none;
+              outline: none;
+              font-size: 15px;
+              color: white !important;
+              width: 22px !important;
+              border-radius: 5px;
+            }
+            .plus {
+              margin-right: 6px;
+              background: $green;
+            }
+            .mins {
+              background: $colorOne;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.remarkModal {
+  width: 100%;
+  height: 100%;
+  background: #24242478;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  .remark {
+    margin-top: 20px;
+    width: 400px;
+    height: 200px;
+    background: $pureWhite;
+    border-radius: 10px;
+    position: relative;
+    .cancleButton {
+      font-size: 20px;
+      position: absolute;
+      font-family: monospace;
+      top: 100;
+      right: 0;
+      margin-top: 8px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .heading {
+      margin-top: 0px !important;
+      margin-left: 20px;
+      font-size: 20px;
+    }
+    .form {
+      margin-top: 0px;
+      margin-left: 30px;
+      input[type="text"] {
+        width: 65%;
+        background: #f0f0f0;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin: 10px 0px;
+        padding: 10px;
+        color: #a892f9;
+        height: 40px;
+      }
+    }
+    .buttons {
+      margin-top: 10px;
+      margin-left: 30px;
+      button {
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .Add {
+        background: $green;
+        color: white;
+      }
+      .cnl {
+        margin-left: 20px;
+        background: $colorFour;
+        color: black;
+      }
+    }
+  }
+}
+
+// for sign-in
+
+.sign-in {
+  margin: 50px auto;
+  width: 370px;
+  height: 440px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #fff;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  .box {
+    margin-top: 20px;
+    .head {
+      text-align: center;
+      color: $green;
+      font-size: 20px;
+    }
+    .action {
+      margin: 15px auto;
+      width: 60%;
+      button {
+        font-size: 25px;
+        margin: 0px 2px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px 20px;
+      }
+      .si {
+        border: 2px solid $colorOne;
+        outline: none;
+        margin-right: 10px;
+        transition: all ease-out 0.5s;
+      }
+      .sp {
+        border: 2px solid $colorOne;
+        outline: none;
+        transition: all ease-out 0.5s;
+      }
+    }
+    .form {
+      width: 90%;
+      margin: 10px auto;
+      input {
+        width: 80%;
+        height: 40px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background: #e5e5e5;
+        margin: 10px auto;
+        margin-left: 30px;
+        padding-left: 20px;
+        color: #a892f9;
+        &::placeholder {
+          padding-left: 15px;
+          font-size: 16px;
+        }
+      }
+      .sendotp {
+        text-align: center;
+        width: 130px;
+        height: 40px;
+        margin: 10px 95px;
+        background: $colorFour;
+        color: rgb(83, 82, 82);
+        outline: none;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .otp {
+        padding-left: 90px;
+        letter-spacing: 5px;
+        color: $mid-black !important;
+        &::placeholder {
+          padding-left: 0px !important;
+          letter-spacing: 5px;
+        }
+      }
+      .enter {
+        text-align: center;
+        width: 130px;
+        height: 40px;
+        margin: 10px 95px;
+        background: $green;
+        outline: none;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
