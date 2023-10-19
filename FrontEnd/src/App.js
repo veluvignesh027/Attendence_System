@@ -14,49 +14,49 @@ import Signin from "./components/sign-in";
 
 const modaldata = [
   {
-    rollno:244241,
+    rollno: 244241,
     fname: "Pavaan",
     dob: "22/01/33",
     remark: ["good", "hello", "welcom"],
     fathername: "lokesh",
-    performance :50,
-    present:false
+    performance: 50,
+    present: false,
   },
   {
-    rollno:244242,
+    rollno: 244242,
     fname: "Rupa",
     dob: "22/01/33",
     remark: ["good", "hello", "welcom"],
     fathername: "lokesh",
-    performance :50,
-    present:false
+    performance: 50,
+    present: false,
   },
   {
-    rollno:244243,
+    rollno: 244243,
     fname: "guru",
     dob: "22/01/33",
     remark: ["good", "hello", "welcom"],
     fathername: "lokesh",
-    performance :50,
-    present:true
+    performance: 50,
+    present: true,
   },
   {
-    rollno:244244,
+    rollno: 244244,
     fname: "vishnu",
     dob: "22/01/33",
     remark: ["good", "hello", "welcom"],
     fathername: "lokesh",
-    performance :50,
-    present:true
+    performance: 50,
+    present: true,
   },
   {
-    rollno:244245,
+    rollno: 244245,
     fname: "kamalesh",
     dob: "22/01/33",
     remark: ["good", "hello", "welcom"],
     fathername: "lokesh",
-    performance :50,
-    present:true
+    performance: 50,
+    present: true,
   },
 ];
 
@@ -64,11 +64,13 @@ export default function App() {
   const [data, setdata] = useState([]);
   useEffect(() => {
     setdata(modaldata);
-  });
-  useEffect(()=>{
-    console.log('data changed');
-  console.log(data)},[data])
-  // console.log(data);
+  },[]);
+
+  useEffect(() => {
+    console.log("main data changed");
+    console.log(data);
+  }, [data]);
+
   const [userName, setuserName] = useState("Kamalesh");
   const [openNotfi, setOpenNotifi] = useState(false);
   const openAndCloseNotfi = () => {
@@ -98,11 +100,19 @@ export default function App() {
           <div className="main">
             <div className="mainOne">
               <ImprotantNotice />
-              <StudentDetails data={data} setdata={setdata}/>
+              <StudentDetails
+                data={data}
+                setdata={setdata}
+                openAndCloseNotfi={openAndCloseNotfi}
+              />
             </div>
             <div className="mainTwo">
               <ShowPeople role={"Teachers"} count={30} logo={teacher} />
-              <ShowPeople role={"Students"} count={data.length} logo={student} />
+              <ShowPeople
+                role={"Students"}
+                count={data.length}
+                logo={student}
+              />
               <NoticeBoard
                 userName={userName}
                 openNotfi={openNotfi}

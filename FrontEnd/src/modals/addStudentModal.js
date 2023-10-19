@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 export default function AddStudentModal({
   addStdOpen,
@@ -6,13 +6,20 @@ export default function AddStudentModal({
   opnAndClose,
   data,
   setdata,
-}) {
+  openAndCloseNotfi,
+  setsuperdata,
+  superdata,
+}) 
+{
   const [fname, setfname] = useState();
   const [lname, setlname] = useState();
   const [dob, setdob] = useState();
   const [remark, setremark] = useState();
-  const rollno = data?.at(-1).rollno + 1
+  const rollno = data?.at(-1).rollno + 1;
   console.log(rollno);
+  useEffect(()=>{
+    console.log('mf-data changed');
+  },[data])
   return (
     <div className="addstdmodal">
       <div className="addModal">
@@ -28,10 +35,21 @@ export default function AddStudentModal({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log('hai');
-            console.log(fname,lname,dob,remark);
-            setdata([...data,{rollno : rollno,fname:fname,dob:dob,remark:remark,performance :50,
-              present:true}])
+            console.log("hai");
+            console.log(fname, lname, dob, remark);
+            setdata([
+              ...data,
+              {
+                rollno: rollno,
+                fname: fname,
+                dob: dob,
+                remark: remark,
+                performance: 50,
+                present: true,
+              },
+            ]);
+            openAddStdClose();
+            openAndCloseNotfi();
           }}
         >
           <div className="form">
@@ -40,7 +58,9 @@ export default function AddStudentModal({
               type="text"
               placeholder="FullName"
               value={fname}
-              onChange={(e)=>{setfname(e.target.value)}}
+              onChange={(e) => {
+                setfname(e.target.value);
+              }}
               required
             />
             <input
@@ -48,27 +68,30 @@ export default function AddStudentModal({
               type="text"
               placeholder="FatherName"
               value={lname}
-              onChange={(e)=>{setlname(e.target.value)}}
+              onChange={(e) => {
+                setlname(e.target.value);
+              }}
               required
-
             />
             <input
               className="date"
               type="date"
               title="select the D-O-B"
               value={dob}
-              onChange={(e)=>{setdob(e.target.value)}}
+              onChange={(e) => {
+                setdob(e.target.value);
+              }}
               required
-
             ></input>
             <input
               className="remarks"
               type="text"
               placeholder="Add Remarks"
               value={remark}
-              onChange={(e)=>{setremark(e.target.value)}}
+              onChange={(e) => {
+                setremark(e.target.value);
+              }}
               required
-
             ></input>
           </div>
 

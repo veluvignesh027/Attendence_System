@@ -1,5 +1,5 @@
 import React from "react";
-export default function StudentModal({openDeatails,setopenDeatails,data,setdata,fulldata}) {
+export default function StudentModal({openDeatails,setopenDeatails,data,setdata,fulldata,openAndCloseNotfi}) {
   return (
     <div className="studentmodal">
       <div className="databox">

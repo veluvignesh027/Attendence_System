@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import StudentModal from "../modals/studentModal";
 import RemarkModal from "../modals/remarkModal";
-export default function Student({ data, setdata, fulldata }) {
+export default function Student({ data, setdata, fulldata,openAndCloseNotfi}) {
   // console.log(data);
   const [openDeatails, setopenDeatails] = useState(false);
   const [openRemark, setOpenRemark] = useState(false);
@@ -16,12 +16,13 @@ export default function Student({ data, setdata, fulldata }) {
           data={data}
           setdata={setdata}
           fulldata={fulldata}
+          openAndCloseNotfi ={openAndCloseNotfi}
         />
       )}
       {openRemark && (
         <RemarkModal openRemark={openRemark} setOpenRemark={setOpenRemark} data={data}
         setdata={setdata}
-        fulldata={fulldata}/>
+        fulldata={fulldata} openAndCloseNotfi={openAndCloseNotfi}/>
       )}
       <div className="student">
         <div className="dets">
@@ -52,7 +53,6 @@ export default function Student({ data, setdata, fulldata }) {
 
                 const updateList = fulldata.map((item) => {
                   if (item.rollno === data.rollno) {
-                    console.log(item);
                     return { ...item, present: true };
                   }
                   return item;
@@ -70,7 +70,6 @@ export default function Student({ data, setdata, fulldata }) {
 
                 const updateList = fulldata.map((item) => {
                   if (item.rollno === data.rollno) {
-                    console.log(item);
                     return { ...item, present: false };
                   }
                   return item;

@@ -7,6 +7,7 @@ export default function RemarkModal({
   data,
   setdata,
   fulldata,
+  openAndCloseNotfi
 }) {
   const [first, setfirst] = useState()
   return (
@@ -33,6 +34,8 @@ export default function RemarkModal({
               return item;
             });
             setdata([...updateList]);
+            openAndCloseNotfi()
+            setOpenRemark(false);
           }}
         >
           <input className="remark" type="text" placeholder="Remark" value={first} onChange={(e)=>{setfirst(e.target.value)}}></input>

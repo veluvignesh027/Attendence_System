@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function PostDataModal({ openpostmodal, setopenpostmodal }) {
+export default function PostDataModal({
+  openpostmodal,
+  setopenpostmodal,
+  setsuperdata,
+  data,
+  setdata,
+  openAndCloseNotfi
+}) {
   return (
     <div className="postdatamodal">
       <div className="postmodal">
@@ -18,8 +25,25 @@ export default function PostDataModal({ openpostmodal, setopenpostmodal }) {
           be sent to Scholor
         </div>
         <div className="buttons">
-        <button className="post-modal" >Post & Send Mail </button>
-        <button className="cnl-modal" onClick={()=>{setopenpostmodal(!openpostmodal)}}>Cancle</button>
+          <button
+            className="post-modal"
+            onClick={() => {
+              console.log('clicked');
+              setsuperdata([...data])
+              setopenpostmodal(!openpostmodal);
+              openAndCloseNotfi()
+            }}
+          >
+            Post & Send Mail{" "}
+          </button>
+          <button
+            className="cnl-modal"
+            onClick={() => {
+              setopenpostmodal(!openpostmodal);
+            }}
+          >
+            Cancle
+          </button>
         </div>
       </div>
     </div>
