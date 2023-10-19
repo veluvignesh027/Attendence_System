@@ -1,7 +1,5 @@
 import React from "react";
-import { useState } from "react";
 export default function StudentModal({openDeatails,setopenDeatails,data,setdata,fulldata}) {
-  const [width, setwidth] = useState(30);
   return (
     <div className="studentmodal">
       <div className="databox">

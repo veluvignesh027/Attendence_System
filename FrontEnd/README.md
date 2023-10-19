@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+# intital
+
+1. to install the node module give "npm i"
+2. to start the server " npm start / npm run start"
+
+
+# note the site is delevoped for the chorme browser and best suits for it.. this site is not responsive. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
