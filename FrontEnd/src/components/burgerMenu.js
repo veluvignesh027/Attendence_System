@@ -66,6 +66,7 @@ export default function BurgerMenu({
                 opnAndClose={openAndClose}
                 data={data}
                 setdata={setdata}
+                openAndCloseNotfi={openAndCloseNotfi}
               />
             )}
             <div
