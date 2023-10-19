@@ -11,18 +11,20 @@ export default function NoticeBoard({
   setOpenNotifi,
   openAndCloseNotfi,
 }) {
+
   const [openmodal, setOpenModal] = useState(false);
   const opnAndClose = () => {
     console.log("hello");
     setOpenModal(!openmodal);
   };
-  const [noticeData, setnoticeDate] = useState([
-    { message: "hello", type: "good" },
-    { message: "hello", type: "warn" },
-    { message: "hello", type: "good" },
-  ])
-  const [message,setmessage] =useState(' ')
-  const [type,settype] =useState('good')
+
+  const [noticeData, setnoticeDate] = useState([]);
+  const [message, setmessage] = useState();
+  const [type, settype] = useState("good");
+
+  useEffect(()=>{
+    setnoticeDate([{message:'newley dated', type:'good'}])
+  },[])
   return (
     <>
       {openmodal && (
@@ -32,10 +34,10 @@ export default function NoticeBoard({
           openNotfi={openNotfi}
           setOpenNotifi={setOpenNotifi}
           openAndCloseNotfi={openAndCloseNotfi}
-          message ={message}
+          message={message}
           setmessage={setmessage}
           type={type}
-          settype ={settype}
+          settype={settype}
           noticeData={noticeData}
           setnoticeDate={setnoticeDate}
         />
@@ -53,11 +55,17 @@ export default function NoticeBoard({
           </div>
         </div>
         <div className="notices">
-          {noticeData.map((data,i)=>{
-            let logoout = (data.type === 'bad') ? bad :(data.type === 'warn') ? warn :good
-            return(
-              <Notice key={data.message + data.type+i} message={data.message} type={data.type} logo={logoout}/>
-            )
+          {noticeData.map((data, i) => {
+            let logoout =
+              data.type === "bad" ? bad : data.type === "warn" ? warn : good;
+            return (
+              <Notice
+                key={data.message + data.type + i}
+                message={data.message}
+                type={data.type}
+                logo={logoout}
+              />
+            );
           })}
         </div>
       </div>

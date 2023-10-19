@@ -456,7 +456,9 @@ body {
     }
     .notices {
       width: 100%;
-      margin-top: 10px;
+      margin-top: 7px;
+      display: flex;
+      flex-direction: column-reverse;
       .good {
         background: $colorThree;
       }
@@ -469,11 +471,13 @@ body {
       .notice {
         width: 90%;
         height: 40px;
-        margin: 9px auto;
+        margin: 3px auto;
         display: flex;
         align-items: center;
         border-radius: 5px;
         color: $mid-black;
+        overflow-y: scroll;
+        padding: 5px;
         img {
           width: 23px;
           height: 23px;
@@ -657,6 +661,7 @@ body {
     .message {
       width: 300px;
       margin-left: 40px;
+      
     }
     .buttons {
       margin-top: 20px;
@@ -750,14 +755,12 @@ body {
         border: 1.5px solid #f0f0f0;
 
         &::placeholder {
-          padding: 10px 20px;
+          padding: 10px 5px;
         }
         &:focus {
           border: 1.5px solid $green;
         }
-        &:invalid {
-          border: 1.5px solid $colorRed;
-        }
+
       }
     }
     .buttons {
@@ -826,7 +829,7 @@ body {
       color: $mid-black;
       width: 250px;
       height: 23px;
-      overflow-y: scroll;
+      overflow: scroll;
     }
   }
 }

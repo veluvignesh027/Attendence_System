@@ -13,11 +13,8 @@ export default function AddNoticeModal({
   type,
   settype,
   noticeData,
-  setnoticeData,
+  setnoticeDate,
 }) {
-  const handlesubmit = () => {
-    console.log(type, message);
-  };
   return (
     <div className="addnoticemo">
       <div className="noticeModal">
@@ -34,10 +31,11 @@ export default function AddNoticeModal({
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            // opnAndClose();
-            // openAndCloseNotfi();
-            // handlesubmit();
-            // setnoticeData([...noticeData, { message: message, type: type }]);
+            console.log(noticeData);
+            console.log(setnoticeDate);
+            setnoticeDate([...noticeData,{message:message,type:type}])
+            setmessage(null)
+            opnAndClose(openmodal);
           }}
         >
           <div className="form">
@@ -58,12 +56,12 @@ export default function AddNoticeModal({
               type="text"
               className="noticeMessage"
               required
-              max={50}
               value={message}
               onChange={(e) => {
                 setmessage(e.target.value);
               }}
-              maxLength={100}
+              maxLength={28}
+              placeholder="Add the Notice"
             />
           </div>
           <div className="buttons">
