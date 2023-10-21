@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.scss";
-import Navbar from "./components/Navbar";
 import { useState } from "react";
+
+import Navbar from "./components/Navbar";
 import ImprotantNotice from "./components/improtantNotice";
 import StudentDetails from "./components/studentDetails";
 import ShowPeople from "./components/showPeople";
@@ -9,8 +10,9 @@ import NoticeBoard from "./components/noticeBoard";
 import student from "../src/asset/icons8-students-64.png";
 import teacher from "../src/asset/icons8-teacher-64.png";
 import Notificationmodal from "./modals/notificationModal";
-import AddNoticeModal from "./modals/addNoticeModal";
+// eslint-disable-next-line no-unused-vars
 import Signin from "./components/sign-in";
+import postdata from "./apis.js/postdata";
 
 const modaldata = [
   {
@@ -61,6 +63,7 @@ const modaldata = [
 ];
 
 export default function App() {
+
   const [data, setdata] = useState([]);
   useEffect(() => {
     setdata(modaldata);
@@ -71,16 +74,22 @@ export default function App() {
     console.log(data);
   }, [data]);
 
+  // eslint-disable-next-line no-unused-vars
   const [userName, setuserName] = useState("Kamalesh");
   const [openNotfi, setOpenNotifi] = useState(false);
+
   const openAndCloseNotfi = () => {
     console.log("called");
     setOpenNotifi(!openNotfi);
   };
+
+  console.log('calling the post');
+  postdata()
+
   return (
     <>
       {/* <Signin/> */}
-      {true && (
+      {false && (
         <div>
           {openNotfi && (
             <Notificationmodal

@@ -22,6 +22,7 @@ $mid-black: #171717;
 $green: #2a8639;
 $colorRed: #ff7e7e;
 $pureWhite: #fff;
+
 body {
   background: #e5e5e5;
 }
@@ -213,7 +214,6 @@ body {
       margin-top: 0px;
       display: flex;
       justify-content: space-between;
-      align-items: start;
       .search {
         display: flex;
         align-items: center;

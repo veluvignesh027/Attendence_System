@@ -38,7 +38,7 @@ export default function AddStudentModal({
             console.log("hai");
             console.log(fname, lname, dob, remark);
             setdata([
-              ...data,
+              
               {
                 rollno: rollno,
                 fname: fname,
@@ -46,7 +46,7 @@ export default function AddStudentModal({
                 remark: remark,
                 performance: 50,
                 present: true,
-              },
+              },...data
             ]);
             openAddStdClose();
             openAndCloseNotfi();
