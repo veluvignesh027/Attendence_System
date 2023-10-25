@@ -12,7 +12,7 @@ import teacher from "../src/asset/icons8-teacher-64.png";
 import Notificationmodal from "./modals/notificationModal";
 // eslint-disable-next-line no-unused-vars
 import Signin from "./components/sign-in";
-import postdata from "./apis.js/postdata";
+import postdata from "./apis/postdata";
 
 const modaldata = [
   {
@@ -88,8 +88,8 @@ export default function App() {
 
   return (
     <>
-      {/* <Signin/> */}
-      {false && (
+      {false && <Signin/>}
+      {true && (
         <div>
           {openNotfi && (
             <Notificationmodal

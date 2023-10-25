@@ -1069,12 +1069,13 @@ body {
 .sign-in {
   margin: 50px auto;
   width: 370px;
-  height: 440px;
+  height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background: #fff;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 15px;
+  transition: height ease-out .4s;
   .box {
     margin-top: 20px;
     .head {
@@ -1151,9 +1152,9 @@ body {
       }
       .enter {
         text-align: center;
-        width: 130px;
+        width: 160px;
         height: 40px;
-        margin: 10px 95px;
+        margin: 10px 90px;
         background: $green;
         outline: none;
         border: none;

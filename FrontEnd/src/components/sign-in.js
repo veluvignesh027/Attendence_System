@@ -44,9 +44,8 @@ export default function Signin() {
               type="password"
               placeholder="Password"
             ></input>
-            <button className="sendotp">Send OTP</button>
-            <input className="otp" placeholder="- - - - - - " maxLength={6}></input>
-            <button className="enter">Verfiy & Enter</button>
+            <button className="enter">Login-In</button>
+
           </form>
         )}
         {sign === "sp" && (
@@ -68,8 +67,9 @@ export default function Signin() {
               type="password"
               placeholder="Password"
             ></input>
-            <input className="repassword" placeholder="Confirm Password"></input>
-            <button className="enter">Sign-Up</button>
+            <button className="sendotp">Send OTP</button>
+            <input className="otp" placeholder="- - - - - - " maxLength={6}></input>
+            <button className="enter">Verfiy & Sign-In</button>
           </form>
         )}
       </div>

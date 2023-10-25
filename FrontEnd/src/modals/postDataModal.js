@@ -1,4 +1,5 @@
 import React from "react";
+import postdata from "../apis/postdata";
 
 export default function PostDataModal({
   openpostmodal,
@@ -31,6 +32,7 @@ export default function PostDataModal({
               console.log('clicked');
               setsuperdata([...data])
               setopenpostmodal(!openpostmodal);
+              postdata(data)
               openAndCloseNotfi()
             }}
           >
