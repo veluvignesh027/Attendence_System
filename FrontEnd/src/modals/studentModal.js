@@ -10,9 +10,9 @@ export default function StudentModal({openDeatails,setopenDeatails,data,setdata,
             <div className="logo">K</div>
             <div className="info">
               <div className="rno">Roll No : {data.rollno}</div>
-              <div className="name">FullName : {data.fname} </div>
+              <div className="name">FullName : {data.name} </div>
               <div className="dob">Dob : {data.dob}</div>
-              <div className="fname">Father Name : {data.fathername}</div>
+              <div className="fname">Father Name : {data?.fathername}</div>
             </div>
           </div>
           <div className="status">

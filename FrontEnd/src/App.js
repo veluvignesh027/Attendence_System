@@ -14,15 +14,26 @@ import Notificationmodal from "./modals/notificationModal";
 import Signin from "./components/sign-in";
 import getdata from "./apis/maindata";
 
-
+const modaldata = [{
+  rollno: 123,
+  name: 'kamla',
+  fathername: 'kjhds',
+  dob: '22/3/2322',
+  mobileno: 9238744,
+  email: "kamla@gamil.com",
+  remark: ['984', 498324],
+  performance: 50,
+  present: true,
+  date: '2/3/44'
+}]
 
 export default function App() {
 
   const [data, setdata] = useState([]);
 
   useEffect(() => {
-    getdata().then(data=>setdata(data))
-  },[]);
+    getdata().then(data => setdata(modaldata))
+  }, []);
 
   // eslint-disable-next-line no-unused-vars
   const [userName, setuserName] = useState("Kamalesh");
@@ -34,7 +45,7 @@ export default function App() {
   }
   return (
     <>
-      {false && <Signin/>}
+      {false && <Signin />}
       {true && (
         <div>
           {openNotfi && (
