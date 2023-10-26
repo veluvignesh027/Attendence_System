@@ -65,7 +65,7 @@ export default function App() {
               <ShowPeople role={"Teachers"} count={30} logo={teacher} />
               <ShowPeople
                 role={"Students"}
-                count={data?.length}
+                count={data?.length ?? 0}
                 logo={student}
               />
               <NoticeBoard
