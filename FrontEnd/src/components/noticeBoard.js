@@ -14,7 +14,6 @@ export default function NoticeBoard({
 
   const [openmodal, setOpenModal] = useState(false);
   const opnAndClose = () => {
-    console.log("hello");
     setOpenModal(!openmodal);
   };
 
@@ -55,7 +54,7 @@ export default function NoticeBoard({
           </div>
         </div>
         <div className="notices">
-          {noticeData.map((data, i) => {
+          {noticeData?.map((data, i) => {
             let logoout =
               data.type === "bad" ? bad : data.type === "warn" ? warn : good;
             return (

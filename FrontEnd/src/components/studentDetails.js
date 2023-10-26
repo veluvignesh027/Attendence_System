@@ -17,6 +17,7 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
 
   const [openpostmodal, setopenpostmodal] = useState(false);
 
+  const [date,setdate] = useState()
   useEffect(() => {
     setmfdata(data);
   }, [data]);
@@ -57,14 +58,12 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
                 alt="serachlogo"
                 src={serachIcon}
                 onClick={() => {
-                  console.log(search);
                   const modifydata =
                     search !== "" && search !== null && search !== undefined
-                      ? data.filter(
+                      ? data?.filter(
                           (item) => item.fname.includes(search) && item
                         )
                       : data;
-                  console.log(modifydata);
                   setmfdata(modifydata);
                   setsearch(null);
                 }}
@@ -105,7 +104,7 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
             <div className="stname"> Std Name</div>
           </div>
           <div className="date">
-            <input type="date"></input>
+            <input type="date" value={date} onChange={e=>{setdate(e.target.value)}}></input>
           </div>
         </div>
         <div className="details">

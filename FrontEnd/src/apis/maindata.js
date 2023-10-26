@@ -1,7 +1,16 @@
-const data = () => {
-  fetch("https://jsonplaceholder.typicode.com/todos/")
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+const getdata = async() =>{
+const url = "http://localhost:3030/getall"
+const options = {
+	method: 'GET',
+	
 };
 
-export default data;
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	return result
+} catch (error) {
+	console.error(error);
+}}
+
+export default getdata

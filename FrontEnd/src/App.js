@@ -12,67 +12,17 @@ import teacher from "../src/asset/icons8-teacher-64.png";
 import Notificationmodal from "./modals/notificationModal";
 // eslint-disable-next-line no-unused-vars
 import Signin from "./components/sign-in";
-import postdata from "./apis/postdata";
+import getdata from "./apis/maindata";
 
-const modaldata = [
-  {
-    rollno: 244241,
-    fname: "Pavaan",
-    dob: "22/01/33",
-    remark: ["good", "hello", "welcom"],
-    fathername: "lokesh",
-    performance: 50,
-    present: false,
-  },
-  {
-    rollno: 244242,
-    fname: "Rupa",
-    dob: "22/01/33",
-    remark: ["good", "hello", "welcom"],
-    fathername: "lokesh",
-    performance: 50,
-    present: false,
-  },
-  {
-    rollno: 244243,
-    fname: "guru",
-    dob: "22/01/33",
-    remark: ["good", "hello", "welcom"],
-    fathername: "lokesh",
-    performance: 50,
-    present: true,
-  },
-  {
-    rollno: 244244,
-    fname: "vishnu",
-    dob: "22/01/33",
-    remark: ["good", "hello", "welcom"],
-    fathername: "lokesh",
-    performance: 50,
-    present: true,
-  },
-  {
-    rollno: 244245,
-    fname: "kamalesh",
-    dob: "22/01/33",
-    remark: ["good", "hello", "welcom"],
-    fathername: "lokesh",
-    performance: 50,
-    present: true,
-  },
-];
+
 
 export default function App() {
 
   const [data, setdata] = useState([]);
-  useEffect(() => {
-    setdata(modaldata);
-  },[]);
 
   useEffect(() => {
-    console.log("main data changed");
-    console.log(data);
-  }, [data]);
+    getdata().then(data=>setdata(data))
+  },[]);
 
   // eslint-disable-next-line no-unused-vars
   const [userName, setuserName] = useState("Kamalesh");
@@ -81,11 +31,7 @@ export default function App() {
   const openAndCloseNotfi = () => {
     console.log("called");
     setOpenNotifi(!openNotfi);
-  };
-
-  console.log('calling the post');
-  postdata()
-
+  }
   return (
     <>
       {false && <Signin/>}
@@ -119,7 +65,7 @@ export default function App() {
               <ShowPeople role={"Teachers"} count={30} logo={teacher} />
               <ShowPeople
                 role={"Students"}
-                count={data.length}
+                count={data?.length}
                 logo={student}
               />
               <NoticeBoard

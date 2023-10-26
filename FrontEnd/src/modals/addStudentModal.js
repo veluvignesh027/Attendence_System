@@ -17,9 +17,7 @@ export default function AddStudentModal({
   const [remark, setremark] = useState();
   const rollno = data?.at(-1).rollno + 1;
   console.log(rollno);
-  useEffect(()=>{
-    console.log('mf-data changed');
-  },[data])
+
   return (
     <div className="addstdmodal">
       <div className="addModal">
