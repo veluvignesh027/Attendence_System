@@ -11,16 +11,15 @@ import (
 
 // Define a struct
 type StudentInfo struct {
-	RollNo       string   `json:"roll-no"`
-	FirstName    string   `json:"first-name"`
-	SecondName   string   `json:"second-name"`
+	RollNo       string   `json:"rollno"`
+	FirstName    string   `json:"name"`
+	FatherName   string   `json:"fathername"`
 	DOB          string   `json:"dob"`
-	Remark       []string `json:"remarks"`
-	FatherName   string   `json:"father-name"`
-	Email        string   `json:"email"`
 	MobileNumber string   `json:"mobile-no"`
-	Performance  int      `json:"performance-score"`
-	Presence     bool     `json:"presence"`
+	Email        string   `json:"email"`
+	Remark       []string `json:"remarks"`
+	Performance  int      `json:"performance"`
+	Presence     bool     `json:"present"`
 	Date         string   `json:"date"`
 }
 
