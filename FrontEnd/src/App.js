@@ -19,10 +19,10 @@ const modaldata = [{
   name: 'kamla',
   fathername: 'kjhds',
   dob: '22/3/2322',
-  mobileno: 9238744,
-  email: "kamla@gamil.com",
+  mobileno: 9238744, 
+  email: "kamsdfla@gamil.com", 
   remark: ['984', 498324],
-  performance: 50,
+  performance: 60,
   present: true,
   date: '2/3/44'
 }]

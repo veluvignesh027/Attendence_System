@@ -350,14 +350,14 @@ body {
             .present {
               color: white;
               background: $green;
-              opacity: 0.6;
+              opacity: 0.4;
               transition: all ease-out 0.2s;
             }
             .absent {
               color: white;
               background: $colorRed;
               margin-left: 5px;
-              opacity: 0.5;
+              opacity: 0.4;
               transition: all ease-in 0.2s;
             }
           }
@@ -511,8 +511,8 @@ body {
   z-index: 99;
   .addModal {
     margin-top: 20px;
-    width: 480px;
-    height: 350px;
+    width: 500px;
+    height: 440px;
     background: $pureWhite;
     border-radius: 10px;
     position: relative;
@@ -569,7 +569,24 @@ body {
           border: 1.5px solid $green;
         }
       }
-      .remarks {
+      .phone{
+        width: 60%;
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        outline: none;
+        border: 1.5px solid #f0f0f0;
+
+        &::placeholder {
+          padding: 10px 20px;
+        }
+        &:focus {
+          border: 1.5px solid $green;
+        }   
+      }
+      .remarks,.email {
         width: 90%;
         margin-top: 15px;
         padding: 10px 20px;
@@ -584,7 +601,7 @@ body {
         }
         &:focus {
           border: 1.5px solid $green;
-        }
+        }   
       }
       .date {
         background: $colorTwo;
@@ -661,7 +678,6 @@ body {
     .message {
       width: 300px;
       margin-left: 40px;
-      
     }
     .buttons {
       margin-top: 20px;
@@ -760,7 +776,6 @@ body {
         &:focus {
           border: 1.5px solid $green;
         }
-
       }
     }
     .buttons {
@@ -848,7 +863,7 @@ body {
   .databox {
     margin-top: 20px;
     width: 600px;
-    height: 350px;
+    height: 370px;
     background: $pureWhite;
     border-radius: 10px;
     position: relative;
@@ -890,11 +905,12 @@ body {
           margin-top: 20px;
           font-size: 20px;
           .name,
-          .fname {
+          .fname,.email {
             margin-top: 5px;
           }
           .dob,
-          .rno {
+          .rno,
+          .mobl {
             color: $colorOne;
             margin-top: 5px;
           }
@@ -922,8 +938,6 @@ body {
             margin-left: 25px;
             margin-top: 8px;
             list-style: circle;
-            display: flex;
-            flex-direction: column-reverse;
             li {
               margin: 2px 0px;
               width: 250px;
@@ -1075,7 +1089,7 @@ body {
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 15px;
-  transition: height ease-out .4s;
+  transition: height ease-out 0.4s;
   .box {
     margin-top: 20px;
     .head {

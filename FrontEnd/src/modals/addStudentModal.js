@@ -9,12 +9,15 @@ export default function AddStudentModal({
   openAndCloseNotfi,
   setsuperdata,
   superdata,
-}) 
-{
+  date,
+  setdate
+}) {
   const [fname, setfname] = useState();
   const [lname, setlname] = useState();
   const [dob, setdob] = useState();
   const [remark, setremark] = useState();
+  const [email, setemail] = useState();
+  const [phone, setphone] = useState();
   const rollno = data?.at(-1).rollno + 1;
   console.log(rollno);
 
@@ -36,15 +39,19 @@ export default function AddStudentModal({
             console.log("hai");
             console.log(fname, lname, dob, remark);
             setdata([
-              
               {
                 rollno: rollno,
-                fname: fname,
+                name: fname,
+                fathername :lname,
+                mobileno: phone,
+                email: email,
                 dob: dob,
-                remark: remark,
+                remark: [remark],
                 performance: 50,
                 present: true,
-              },...data
+                date : date
+              },
+              ...data,
             ]);
             openAddStdClose();
             openAndCloseNotfi();
@@ -81,6 +88,27 @@ export default function AddStudentModal({
               }}
               required
             ></input>
+            <input
+              className="phone"
+              type="number"
+              placeholder="Mobile Numeber"
+              value={phone}
+              onChange={(e) => {
+                setphone(e.target.value);
+              }}
+              required
+            ></input>
+            <input
+              className="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
+              required
+            ></input>
+
             <input
               className="remarks"
               type="text"

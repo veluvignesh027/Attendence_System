@@ -35,6 +35,8 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
           openAndCloseNotfi={openAndCloseNotfi}
           superdata={data}
           setsuperdata={setdata}
+          date = {date}
+          setdate = {setdate}
         />
       )}
 

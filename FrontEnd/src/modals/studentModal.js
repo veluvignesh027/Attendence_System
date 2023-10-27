@@ -13,6 +13,8 @@ export default function StudentModal({openDeatails,setopenDeatails,data,setdata,
               <div className="name">FullName : {data.name} </div>
               <div className="dob">Dob : {data.dob}</div>
               <div className="fname">Father Name : {data?.fathername}</div>
+              <div className="mobl">Mobile.No : {data?.mobileno}</div>
+              <div className="email"> Email : {data?.email}</div>
             </div>
           </div>
           <div className="status">
