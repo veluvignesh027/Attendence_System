@@ -33,7 +33,7 @@ export default function Student({ data, setdata, fulldata,openAndCloseNotfi}) {
               setopenDeatails(!openDeatails);
             }}
           >
-            {data.fname}
+            {data.name}
           </div>
         </div>
         <div className="actions">

@@ -51,6 +51,8 @@ func SaveHandler(db *bbolt.DB) http.HandlerFunc {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
+		w.Header().Add("Access-Control-Allow-Origin", "http://localhost:3000")
+		w.Header().Add("Access-Control-Allow-Credentials", "true")
 		w.WriteHeader(http.StatusOK)
 	}
 }
@@ -74,6 +76,8 @@ func GetAllHandler(db *bbolt.DB) http.HandlerFunc {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
+		w.Header().Add("Access-Control-Allow-Origin", "http://localhost:3000")
+		w.Header().Add("Access-Control-Allow-Credentials", "true")
 		err = json.NewEncoder(w).Encode(allStudents)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
