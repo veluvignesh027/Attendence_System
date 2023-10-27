@@ -24,7 +24,7 @@ type StudentInfo struct {
 	Date         string   `json:"date"`
 }
 
-var dbFile = "\\CACHE_BASEDIR\\selvaProject\\Attendence_System\\BackEnd\\dbFile\\data.db"
+var dbFile = "C:\\Users\\kamalesvaran.l\\Documents\\learn\\Attendence_System\\BackEnd\\dbFile\\data.db"
 var bucketName = []byte("student")
 
 func NewDataBase() (*bbolt.DB, error) {

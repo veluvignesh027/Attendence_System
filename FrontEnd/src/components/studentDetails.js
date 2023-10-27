@@ -63,7 +63,7 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
                   const modifydata =
                     search !== "" && search !== null && search !== undefined
                       ? data?.filter(
-                          (item) => item.fname.includes(search) && item
+                          (item) => item.name.includes(search) && item
                         )
                       : data;
                   setmfdata(modifydata);
