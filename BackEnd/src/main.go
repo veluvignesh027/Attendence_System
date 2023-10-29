@@ -20,7 +20,6 @@ func init() {
 	err := config.InitConfig()
 	if err != nil {
 		log.Println("Config Error!")
-		usage()
 		os.Exit(-1)
 	}
 	log.Println("Configuration read sucessfully")

@@ -1,14 +1,15 @@
 const postdata = (data) => {
-fetch('localhost:3030', {
+fetch('http://localhost:3030/save', {
   method: 'POST',
-  body: JSON.stringify({
-    ...data
-  }),
+  mode:'no-cors',
+  body: JSON.stringify(
+    data,
+    null
+  ),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
+    'Host':'http://localhost:3000'
   },
 })  
-  .then((response) => response.json())
-  .then((json) => console.log(json))}
-  
+}
 export default postdata

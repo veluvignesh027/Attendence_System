@@ -32,6 +32,7 @@ export default function PostDataModal({
               console.log('clicked');
               setsuperdata([...data])
               setopenpostmodal(!openpostmodal);
+              console.log(data);
               postdata(data)
               openAndCloseNotfi()
             }}

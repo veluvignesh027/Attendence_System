@@ -18,7 +18,7 @@ export default function AddStudentModal({
   const [remark, setremark] = useState();
   const [email, setemail] = useState();
   const [phone, setphone] = useState();
-  const rollno = data?.at(-1).rollno + 1;
+  const [rollno,setrollno] = useState();
   console.log(rollno);
 
   return (
@@ -58,6 +58,16 @@ export default function AddStudentModal({
           }}
         >
           <div className="form">
+          <input
+              className="firtsname"
+              type="text"
+              placeholder="RollNo"
+              value={rollno}
+              onChange={(e) => {
+                setrollno(e.target.value);
+              }}
+              required
+            />
             <input
               className="firtsname"
               type="text"
@@ -90,9 +100,10 @@ export default function AddStudentModal({
             ></input>
             <input
               className="phone"
-              type="number"
+              type="text"
               placeholder="Mobile Numeber"
               value={phone}
+              pattern ="*[0-9]{}$"
               onChange={(e) => {
                 setphone(e.target.value);
               }}

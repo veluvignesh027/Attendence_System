@@ -15,9 +15,9 @@ type StudentInfo struct {
 	FirstName    string   `json:"name"`
 	FatherName   string   `json:"fathername"`
 	DOB          string   `json:"dob"`
-	MobileNumber string   `json:"mobile-no"`
+	MobileNumber string   `json:"mobileno"`
 	Email        string   `json:"email"`
-	Remark       []string `json:"remarks"`
+	Remark       []string `json:"remark"`
 	Performance  int      `json:"performance"`
 	Presence     bool     `json:"present"`
 	Date         string   `json:"date"`
