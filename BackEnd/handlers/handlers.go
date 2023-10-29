@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/etcd-io/bbolt"
+	"github.com/veluvignesh027/Attendence_System/BackEnd/config"
 	"github.com/veluvignesh027/Attendence_System/BackEnd/database"
 	"github.com/veluvignesh027/Attendence_System/BackEnd/email"
 )
@@ -14,6 +15,7 @@ import (
 func SaveHandler(db *bbolt.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		log.Println("Incoming POST Request to save the data from", r.URL.Host)
+		log.Println("Headers :", r.Header)
 
 		var tempStudents []database.StudentInfo
 
@@ -28,9 +30,11 @@ func SaveHandler(db *bbolt.DB) http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
+		log.Println("Body :=>", string(nByte))
 
 		err = json.Unmarshal(nByte, &tempStudents)
 		if err != nil {
+			log.Println(err)
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
@@ -42,12 +46,10 @@ func SaveHandler(db *bbolt.DB) http.HandlerFunc {
 			return
 		}
 
-		if r.Header.Get("email") == "1" {
-			email.SendMailToDest("mailid", "data-we-want-to-send")
-			w.Header().Set("Email", "Sent")
-		} else {
-			log.Println("Mailing Option Disabled From the Header. Not Sending the Email ")
-			w.Header().Set("Email", "Not Sent")
+		err = email.SendMailToDest(config.CurrentConfigDetails.ToEmail, "hello")
+		if err != nil {
+			log.Println("Error Sending Email", err)
+			return
 		}
 
 		w.Header().Set("Content-Type", "application/json")
@@ -55,6 +57,7 @@ func SaveHandler(db *bbolt.DB) http.HandlerFunc {
 		w.Header().Add("Access-Control-Allow-Credentials", "true")
 		w.WriteHeader(http.StatusOK)
 	}
+
 }
 
 func GetAllHandler(db *bbolt.DB) http.HandlerFunc {

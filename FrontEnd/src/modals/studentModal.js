@@ -7,7 +7,7 @@ export default function StudentModal({openDeatails,setopenDeatails,data,setdata,
         <div className="heading">Viewing the student detail here..!</div>
         <div className="wrap">
           <div className="det">
-            <div className="logo">K</div>
+            <div className="logo">{data.name[0]}</div>
             <div className="info">
               <div className="rno">Roll No : {data.rollno}</div>
               <div className="name">FullName : {data.name} </div>

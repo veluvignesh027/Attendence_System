@@ -10,7 +10,7 @@ export default function Navbar({userName,data,setdata,openAndCloseNotfi}) {
         <div className='heading'>NV Schools and Management</div>
       </div>
       <div className='two'>
-        <div className='username'>Welcome..! <span className='user'>{userName}</span> </div>
+        <div className='username'>Welcome <span className='user'>{userName}</span> </div>
         <BurgerMenu data={data}
           setdata={setdata}
           openAndCloseNotfi={openAndCloseNotfi}/>

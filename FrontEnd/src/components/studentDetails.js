@@ -17,7 +17,19 @@ export default function StudentDetails({ data, setdata, openAndCloseNotfi }) {
 
   const [openpostmodal, setopenpostmodal] = useState(false);
 
-  const [date,setdate] = useState()
+  // https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
+
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  let mm = today.getMonth() + 1; // Months start at 0!
+  let dd = today.getDate();
+
+  if (dd < 10) dd = '0' + dd;
+  if (mm < 10) mm = '0' + mm;
+
+  const formattedToday = yyyy + '-' + mm + '-' + dd;
+
+  const [date,setdate] = useState(formattedToday)
   useEffect(() => {
     setmfdata(data);
   }, [data]);

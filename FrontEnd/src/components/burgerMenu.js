@@ -39,7 +39,7 @@ export default function BurgerMenu({
             <div className="user">
               <div className="userlogo">K</div>{" "}
               <div className="userdetails">
-                <div className="name">Kamalesh</div>
+                <div className="name">User</div>
                 <div className="role">High-School Math Teacher</div>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function BurgerMenu({
             >
               Add New Scholor
             </div>
-            <div className="remove">Remove Scholor</div>
+            <div className="remove"><a href="http://localhost:3030/viewoldreports" target="_blank">View Old Reports</a></div>
           </div>
           <SplitlineVr />
           <div className="logs">
